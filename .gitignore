@@ -1,0 +1,8 @@
+# ignore os files
+.DS_Store
+
+# ignore composer vendor
+vendor/
+
+# ignore npm node_modules
+node_modules/
