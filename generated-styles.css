@@ -1,0 +1,100 @@
+:root {
+  --padding-normal: 5px 10px;
+  --padding-big: 25px 10px;
+  --padding-x-normal: 10px;
+}
+
+.event .event-details {
+  padding-left: 0;
+  list-style: none;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.sitewide-header {
+  padding: var(--padding-normal);
+  width: 100%;
+  background-color: var(--wp--preset--color--gray);
+}
+.sitewide-header.fixed {
+  position: fixed;
+  z-index: 999;
+}
+.sitewide-header .headnotes {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.sitewide-main {
+  width: 100%;
+}
+@media (min-width: 1076px) {
+  .sitewide-main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1076px;
+    display: grid;
+    grid-template-columns: 768px 308px;
+  }
+}
+
+.main-content {
+  padding-left: var(--padding-x-normal);
+  padding-right: var(--padding-x-normal);
+  width: 100%;
+}
+.main-content .main-content-header {
+  position: relative;
+  margin-bottom: 75px;
+}
+.main-content .main-content-header .wp-post-image {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.main-content .main-content-header .main-content-title {
+  margin: 0 auto;
+  padding: var(--padding-big);
+  width: 80%;
+  position: absolute;
+  left: 50%;
+  translate: -50% -50px;
+  text-align: center;
+  background-color: var(--wp--preset--color--gray);
+}
+
+.event .event-details {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--wp--custom--spacing--outer);
+}
+.event .event-details .event-detail {
+  flex-basis: 25%;
+  padding: var(--padding-big);
+  text-align: center;
+  background-color: var(--wp--preset--color--gray);
+}
+
+.main-widgets {
+  padding-left: var(--padding-x-normal);
+  padding-right: var(--padding-x-normal);
+  width: 100%;
+}
+
+.sitewide-footer {
+  margin-top: auto;
+  padding: var(--padding-normal);
+  width: 100%;
+  background-color: var(--wp--preset--color--gray);
+}
+.sitewide-footer .footnotes {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+/*# sourceMappingURL=assets/styles/generated-styles.css.map */
