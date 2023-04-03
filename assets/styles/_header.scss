@@ -1,0 +1,19 @@
+.sitewide-header
+{
+  padding: var(--padding-normal);
+  width: 100%;
+  background-color: var(--wp--preset--color--gray);
+
+  &.fixed
+  {
+    position: fixed;
+    z-index: 999;
+  }
+
+  .headnotes
+  {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,19 @@
+.event
+{
+  .event-details
+  {
+    @extend %reset-list;
+
+    display: flex;
+    justify-content: space-between;
+    gap: var(--wp--custom--spacing--outer);
+
+    .event-detail
+    {
+      flex-basis: 25%;
+      padding: var(--padding-big);
+      text-align: center;
+      background-color: var(--wp--preset--color--gray);
+    }
+  }
+}
