@@ -6,25 +6,31 @@ document.addEventListener("DOMContentLoaded", makeHeaderFixed);
 function makeHeaderFixed()
 {
   if (!window.matchMedia("(min-width:768px)").matches)
-    return null;
+    return;
 
-  const observed = document.querySelector(".sitewide-footer");
-  if (!observed)
+  const fakeObserved = document.querySelector(".sitewide-footer");
+  if (!fakeObserved)
+    return;
+
+  const documentHeight = document.querySelector("body");
+  if (!documentHeight)
     return;
 
   const observerOptions = {
     threshold: 1,
-    rootMargin: `${(observed.clientHeight)*10}px`
+    rootMargin: `${documentHeight.clientHeight*0.33}px`
   }
 
   const observer = new IntersectionObserver(manipulateHeader, observerOptions);
 
-  observer.observe(observed);
+  observer.observe(fakeObserved);
 }
 
 function manipulateHeader(entries)
 {
   const header = document.querySelector(".sitewide-header");
+  if (!header)
+    return;
 
   entries.forEach(entry => {
 
