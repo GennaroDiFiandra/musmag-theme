@@ -1,0 +1,8 @@
+@use './utils' as *;
+
+.main-content
+{
+  padding-left: var(--pa-x-normal);
+  padding-right: var(--pa-x-normal);
+  width: 100%;
+}

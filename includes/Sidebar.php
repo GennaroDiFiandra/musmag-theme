@@ -32,7 +32,7 @@ class Sidebar
   public function setup_actions()
   {
     return [
-      'widgets_init' => ['register_sidebar',10,1],
+      'widgets_init' => ['register_sidebar',10,0],
     ];
   }
 }

@@ -6,6 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <script>document.documentElement.classList.remove("is_js_off");</script>
     <?php wp_head(); ?>
   </head>
