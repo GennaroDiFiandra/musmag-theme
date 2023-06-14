@@ -1,4 +1,19 @@
+@use './utils' as *;
+
 *, *::before, *::after
 {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar-track
+{
+  background-color: var(--wp--preset--color--white);
+}
+:-webkit-scrollbar-thumb
+{
+  background-color: var(--wp--preset--color--accent);
+}
+::-webkit-scrollbar
+{
+  width: 12px;
 }

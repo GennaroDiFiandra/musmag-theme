@@ -87,6 +87,12 @@ settings:
       - name: Large
         slug: large
         size: 2.5rem
+      - name: X-Large
+        slug: x-large
+        size: 3.5rem
+      - name: Huge
+        slug: huge
+        size: 4.5rem
     lineHeight: true
     dropCap: false
   custom:

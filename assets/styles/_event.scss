@@ -1,19 +1,61 @@
-.event
+@use './utils' as *;
+
+.single-event
 {
-  .event-details
+  .sitewide-main
   {
-    @extend %reset-list;
+    max-width: var(--step-5);
+    margin-left: auto;
+    margin-right: auto;
 
-    display: flex;
-    justify-content: space-between;
-    gap: var(--wp--custom--spacing--outer);
-
-    .event-detail
+    @include step-2
     {
-      flex-basis: 25%;
-      padding: var(--padding-big);
-      text-align: center;
-      background-color: var(--wp--preset--color--gray);
+      display: grid;
+      grid-template-columns: 66.5% 33.5%;
+    }
+
+  }
+
+  .main-content
+  {
+    img
+    {
+      @extend %make-image-responsive;
+    }
+
+    .event-header
+    {
+      position: relative;
+      margin-bottom: 75px;
+
+      .event-title
+      {
+        margin: 0 auto;
+        padding: var(--pa-large);
+        width: 80%;
+        position: absolute;
+        left: 50%;
+        translate: -50% -50px;
+        text-align: center;
+        background-color: var(--wp--preset--color--gray);
+      }
+    }
+
+    .event-details
+    {
+      @extend %reset-list;
+
+      display: flex;
+      justify-content: space-between;
+      gap: var(--wp--custom--spacing--outer);
+
+      .event-detail
+      {
+        flex-basis: 25%;
+        padding: var(--pa-large);
+        text-align: center;
+        background-color: var(--wp--preset--color--gray);
+      }
     }
   }
 }

@@ -23,7 +23,7 @@ class Style
 
   private function set_version()
   {
-    return wp_get_theme()->get('version');
+    return filemtime($this->src);
   }
 
   private function get_version()
@@ -39,7 +39,7 @@ class Style
   public function setup_actions()
   {
     return [
-      'wp_enqueue_scripts' => ['register_style',10,5],
+      'wp_enqueue_scripts' => ['register_style',10,0],
     ];
   }
 }

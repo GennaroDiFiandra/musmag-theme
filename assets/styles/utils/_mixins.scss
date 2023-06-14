@@ -1,0 +1,29 @@
+@mixin step-1
+{
+  @media (min-width: 576px) { @content; }
+}
+
+@mixin step-2
+{
+  @media (min-width: 768px) { @content; }
+}
+
+@mixin step-3
+{
+  @media (min-width: 992px) { @content; }
+}
+
+@mixin step-4
+{
+  @media (min-width: 1200px) { @content; }
+}
+
+@mixin step-5
+{
+  @media (min-width: 1400px) { @content; }
+}
+
+@mixin transition($property)
+{
+  transition: $property .32s ease-in-out;
+}

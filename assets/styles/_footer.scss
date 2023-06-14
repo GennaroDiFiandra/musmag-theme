@@ -1,7 +1,9 @@
+@use './utils' as *;
+
 .sitewide-footer
 {
   margin-top: auto;
-  padding: var(--padding-normal);
+  padding: var(--pa-normal);
   width: 100%;
   background-color: var(--wp--preset--color--gray);
 
