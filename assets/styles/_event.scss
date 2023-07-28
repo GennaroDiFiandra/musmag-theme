@@ -5,8 +5,7 @@
   .sitewide-main
   {
     max-width: var(--step-5);
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: var(--ma-x-auto);
 
     @include step-2
     {
@@ -20,7 +19,7 @@
   {
     img
     {
-      @extend %make-image-responsive;
+      margin-inline: var(--ma-x-auto);
     }
 
     .event-header
@@ -30,7 +29,7 @@
 
       .event-title
       {
-        margin: 0 auto;
+        margin: 0 var(--ma-x-auto);
         padding: var(--pa-large);
         width: 80%;
         position: absolute;

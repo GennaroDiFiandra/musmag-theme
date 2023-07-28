@@ -23,7 +23,7 @@ class Style
 
   private function set_version()
   {
-    return filemtime($this->src);
+    return wp_get_theme()->get('Version');
   }
 
   private function get_version()

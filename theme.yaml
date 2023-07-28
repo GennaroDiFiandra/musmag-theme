@@ -3,17 +3,17 @@ $schema: https://schemas.wp.org/trunk/theme.json
 version: 2
 title: MusMagTheme
 settings:
+  appearanceTools: true
   layout:
     contentSize: 768px
     wideSize: 1400px
   spacing:
-    padding: true
     margin: true
+    padding: true
     units:
       - rem
       - px
       - "%"
-  appearanceTools: true
   color:
     custom: false
     customDuotone: false
@@ -21,6 +21,7 @@ settings:
     defaultDuotone: false
     defaultGradients: false
     defaultPalette: false
+    link: true
     palette:
       - name: Accent
         slug: accent
@@ -96,6 +97,8 @@ settings:
     lineHeight: true
     dropCap: false
   custom:
+    fontStyle:
+      italic: italic
     fontWeight:
       regular: 400
       bold: 900

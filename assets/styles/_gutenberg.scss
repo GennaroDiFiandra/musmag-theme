@@ -1,0 +1,16 @@
+@use './utils' as *;
+
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull))
+{
+  max-width: var(--wp--style--global--content-size);
+}
+
+body .is-layout-constrained.alignwide > :where(:not(.alignleft):not(.alignright):not(.alignfull))
+{
+  max-width: var(--wp--style--global--wide-size);
+}
+
+body .is-layout-constrained.alignfull > :where(:not(.alignleft):not(.alignright):not(.alignfull))
+{
+  max-width: none;
+}

@@ -14,7 +14,7 @@ const paths = {
     dest: "./",
   },
   scripts: {
-    src: ["./assets/scripts/header.js"],
+    src: ["./assets/scripts/main-menu.js"],
     dest: "./",
   },
 };

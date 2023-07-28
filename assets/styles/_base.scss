@@ -17,3 +17,8 @@
 {
   width: 12px;
 }
+
+img
+{
+  @extend %make-image-responsive;
+}
