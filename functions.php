@@ -7,6 +7,7 @@ use MusMagTheme\Script;
 
 use MusMagTheme\Feature;
 
+use MusMagTheme\Menu;
 use MusMagTheme\Sidebar;
 
 use MusMagTheme\ThemeTranslationsLoader;
@@ -22,6 +23,7 @@ final class MusMagTheme
   private array $styles;
   private array $scripts;
   private array $features;
+  private array $menus;
   private array $sidebars;
 
   private ThemeTranslationsLoader $translations_loader;
@@ -104,8 +106,15 @@ final class MusMagTheme
       $this->add_to_actions_book($feature);
     }
 
+    // add menus
+    $this->menus['main_menu'] = new Menu('main-menu', __('Main Menu', 'musmag-theme'));
+    foreach ($this->menus as $menu)
+    {
+      $this->add_to_actions_book($menu);
+    }
+
     // add sidebars
-    $this->sidebars['event-sidebar'] = new Sidebar(__('Event sidebar','musmag-theme'), 'event-sidebar');
+    $this->sidebars['event_sidebar'] = new Sidebar(__('Event sidebar','musmag-theme'), 'event-sidebar');
     foreach ($this->sidebars as $sidebar)
     {
       $this->add_to_actions_book($sidebar);

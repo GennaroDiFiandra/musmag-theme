@@ -50,4 +50,3 @@ function openSubMenu()
 
   this.classList.toggle("open");
 }
-//# sourceMappingURL=assets/scripts/generated-scripts.js.map

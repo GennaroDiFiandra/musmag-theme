@@ -1,0 +1,56 @@
+@use './utils' as *;
+
+.menu
+{
+  @extend %reset-list;
+
+  display: flex;
+  flex-direction: column;
+
+  @include step-3
+    {
+      flex-direction: row;
+    }
+
+  .menu-item
+  {
+    padding: var(--pa-normal);
+  }
+
+  .menu-item-has-children
+  {
+    display: grid;
+    grid-template-rows: auto 0fr;
+    @include transition(grid-template-rows);
+
+    @include step-3
+    {
+      position: relative;
+    }
+
+    &.open
+    {
+      grid-template-rows: auto 1fr;
+
+      .sub-menu
+      {
+        @include step-3
+        {
+          position: absolute;
+        }
+      }
+    }
+
+    & > a::after
+    {
+      content: "▾";
+      position: absolute;
+    }
+
+    .sub-menu
+    {
+      @extend %reset-list;
+      overflow-y: hidden;
+    }
+  }
+}

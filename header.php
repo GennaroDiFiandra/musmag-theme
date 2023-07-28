@@ -17,5 +17,6 @@
     <div id="app">
 
       <header class="sitewide-header">
-        <p class="headnotes">qui va l'header</p>
+        <?php get_template_part('template-parts/logo'); ?>
+        <?php get_template_part('template-parts/menus/main'); ?>
       </header>

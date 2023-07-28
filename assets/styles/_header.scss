@@ -2,6 +2,9 @@
 
 .sitewide-header
 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: var(--pa-normal);
   width: 100%;
   background-color: var(--wp--preset--color--gray);
@@ -11,7 +14,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 999;
+    z-index: 101;
   }
 
   .headnotes

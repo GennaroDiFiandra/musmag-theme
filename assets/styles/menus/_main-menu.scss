@@ -1,0 +1,62 @@
+@use './utils' as *;
+
+.main-menu-wrapper
+{
+  .menu-opener
+  {
+    display: flex;
+
+    @include step-3
+    {
+      display: none;
+    }
+  }
+
+  .menu-sitewide-navigation
+  {
+    transform: translateX(150%);
+    @include transition(transform);
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 102;
+    padding: var(--pa-normal);
+    width: 288px;
+    max-width: 95%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--wp--preset--color--gray);
+
+    &.open
+    {
+      transform: translateX(0);
+    }
+
+    @include step-3
+    {
+      transform: translateX(0);
+      position: static;
+      width: auto;
+      max-width: none;
+      height: auto;
+      background-color: transparent;
+    }
+
+    .menu-main-menu
+    {
+      display: flex;
+    }
+
+    .menu-closer
+    {
+      order: -1;
+      text-align: right;
+
+      @include step-3
+      {
+        display: none;
+      }
+    }
+  }
+}
