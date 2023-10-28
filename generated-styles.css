@@ -58,12 +58,13 @@ img {
   background-color: var(--wp--preset--color--white);
 }
 
-:-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: var(--wp--preset--color--accent);
+  border-radius: calc(var(--wp--preset--font-size--normal) * 2);
 }
 
 ::-webkit-scrollbar {
-  width: 12px;
+  width: calc(var(--wp--preset--font-size--normal) / 2);
 }
 
 body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {

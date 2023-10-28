@@ -1,5 +1,5 @@
 /* Hanlde the main menu */
-document.addEventListener("DOMContentLoaded", handleMainMenu);
+// document.addEventListener("DOMContentLoaded", handleMainMenu);
 document.addEventListener("DOMContentLoaded", handleSubMenu);
 
 function handleMainMenu()
@@ -50,3 +50,34 @@ function openSubMenu()
 
   this.classList.toggle("open");
 }
+
+const mobileMenuHandler = {
+  opener: function() {
+    return document.querySelector(".menu-opener") || false;
+  },
+  closer: function() {
+    return document.querySelector(".menu-closer") || false;
+  },
+  open: function() {
+    if (this.nextElementSibling) {
+      this.nextElementSibling.classList.add("open");
+      document.body.style.overflowY = "hidden";
+    }
+  },
+  close: function() {
+    if (this.closest(".menu-sitewide-navigation")) {
+      this.closest(".menu-sitewide-navigation").classList.remove("open");
+      document.body.style.overflowY = "auto";
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(min-width: 992px)").matches) return;
+
+  if (mobileMenuHandler.opener())
+    mobileMenuHandler.opener().addEventListener("click", mobileMenuHandler.open());
+
+  if (mobileMenuHandler.closer())
+    mobileMenuHandler.closer().addEventListener("click", mobileMenuHandler.close());
+});

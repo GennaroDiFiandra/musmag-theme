@@ -8,9 +8,7 @@ const sass = require("gulp-sass")(require("sass"));
 
 const paths = {
   styles: {
-    src: [
-      "./assets/styles/imports.scss",
-    ],
+    src: ["./assets/styles/imports.scss",],
     dest: "./",
   },
   scripts: {
@@ -37,8 +35,8 @@ function doScript() {
 }
 
 function watcher() {
-  watch(paths.styles.src, doStyle);
-  watch(paths.scripts.src, doScript);
+  watch("./assets/styles/**/*.scss", doStyle);
+  watch("./assets/scripts/**/*.js", doScript);
 }
 
 exports.doStyle = doStyle;
