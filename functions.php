@@ -8,17 +8,17 @@ use MusMagTheme\Script;
 use MusMagTheme\Feature;
 
 use MusMagTheme\Menu;
+
 use MusMagTheme\Sidebar;
 
-use MusMagTheme\ThemeTranslationsLoader;
+use MusMagTheme\TranslationsLoader;
 
 final class MusMagTheme
 {
   private static ?MusMagTheme $instance = null;
 
   private HooksActivator $activator;
-  private array $objects_actions_book = [];
-  private array $objects_filters_book = [];
+  private array $hooks_book = [];
 
   private array $styles;
   private array $scripts;
@@ -26,7 +26,7 @@ final class MusMagTheme
   private array $menus;
   private array $sidebars;
 
-  private ThemeTranslationsLoader $translations_loader;
+  private TranslationsLoader $translations_loader;
 
   public static function instance():MusMagTheme
   {
@@ -51,24 +51,14 @@ final class MusMagTheme
     require_once __DIR__.'/vendor/autoload.php';
   }
 
-  public function get_objects_actions_book()
+  public function hooks_book()
   {
-    return $this->objects_actions_book;
+    return $this->hooks_book;
   }
 
-  public function get_objects_filters_book()
+  private function add_to_hooks_book($object)
   {
-    return $this->objects_filters_book;
-  }
-
-  private function add_to_actions_book($object)
-  {
-    $this->objects_actions_book[] = $object;
-  }
-
-  private function add_to_filters_book($object)
-  {
-    $this->objects_filters_book[] = $object;
+    $this->hooks_book[] = $object;
   }
 
   public function init()
@@ -79,14 +69,14 @@ final class MusMagTheme
     $this->styles['generated_styles'] = new Style('generated-styles', get_template_directory_uri().'/generated-styles.css');
     foreach ($this->styles as $style)
     {
-      $this->add_to_actions_book($style);
+      $this->add_to_hooks_book($style);
     }
 
     // add compiled js files
     $this->scripts['generated-scripts'] = new Script('generated-scripts', get_template_directory_uri().'/generated-scripts.js');
     foreach ($this->scripts as $script)
     {
-      $this->add_to_actions_book($script);
+      $this->add_to_hooks_book($script);
     }
 
     // add seo title
@@ -103,36 +93,32 @@ final class MusMagTheme
     $this->features['woocommerce'] = new Feature('woocommerce');
     foreach ($this->features as $feature)
     {
-      $this->add_to_actions_book($feature);
+      $this->add_to_hooks_book($feature);
     }
 
     // add menus
     $this->menus['main_menu'] = new Menu('main-menu', __('Main Menu', 'musmag-theme'));
     foreach ($this->menus as $menu)
     {
-      $this->add_to_actions_book($menu);
+      $this->add_to_hooks_book($menu);
     }
 
     // add sidebars
     $this->sidebars['event_sidebar'] = new Sidebar(__('Event sidebar','musmag-theme'), 'event-sidebar');
     foreach ($this->sidebars as $sidebar)
     {
-      $this->add_to_actions_book($sidebar);
+      $this->add_to_hooks_book($sidebar);
     }
 
     // load strings translations
-    $this->translations_loader = new ThemeTranslationsLoader();
-    $this->add_to_actions_book($this->translations_loader);
+    $this->translations_loader = new TranslationsLoader();
+    $this->add_to_hooks_book($this->translations_loader);
 
     // activate hooks
     $this->activator = new HooksActivator();
-    foreach ($this->objects_actions_book as $object)
+    foreach ($this->hooks_book as $object)
     {
-      $this->activator->activate_actions($object);
-    }
-    foreach ($this->objects_filters_book as $object)
-    {
-      $this->activator->activate_filters($object);
+      $this->activator->activate_hooks($object);
     }
   }
 }

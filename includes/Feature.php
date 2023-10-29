@@ -29,7 +29,7 @@ class Feature
       remove_theme_support($this->name);
   }
 
-  public function setup_actions()
+  public function setup_hooks()
   {
     return [
       'after_setup_theme' => ['register_feature',10,0],

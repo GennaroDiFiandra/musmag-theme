@@ -1,57 +1,14 @@
-/* Hanlde the main menu */
-// document.addEventListener("DOMContentLoaded", handleMainMenu);
-document.addEventListener("DOMContentLoaded", handleSubMenu);
-
-function handleMainMenu()
-{
-  // if (window.matchMedia("(min-width: 992px)").matches) return;
-
-  const menuOpener = document.querySelector(".menu-opener");
-  if (!menuOpener) return;
-
-  const menuCloser = document.querySelector(".menu-closer");
-  if (!menuCloser) return;
-
-  menuOpener.addEventListener("click", openMenu);
-  menuCloser.addEventListener("click", closeMenu);
+const subMainMenuHandler ={
+  openers: function() {
+    return document.querySelectorAll(".menu-item-has-children") || false;
+  },
+  open: function() {
+    event.preventDefault();
+    this.classList.toggle("open");
+  }
 }
 
-function openMenu()
-{
-  const menu = this.nextElementSibling;
-  if (!menu) return;
-
-  menu.classList.add("open");
-
-  document.body.style.overflowY = "hidden";
-}
-
-function closeMenu()
-{
-  const menu = this.closest(".menu-sitewide-navigation");
-  if (!menu) return;
-
-  menu.classList.remove("open");
-
-  document.body.style.overflowY = "auto";
-}
-
-function handleSubMenu()
-{
-  const submenuOpener = document.querySelector(".menu-item-has-children");
-  if (!submenuOpener) return;
-
-  submenuOpener.addEventListener("click", openSubMenu);
-}
-
-function openSubMenu()
-{
-  event.preventDefault();
-
-  this.classList.toggle("open");
-}
-
-const mobileMenuHandler = {
+const mobileMainMenuHandler = {
   opener: function() {
     return document.querySelector(".menu-opener") || false;
   },
@@ -73,11 +30,18 @@ const mobileMenuHandler = {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (subMainMenuHandler.openers()) {
+    // const openers_array = Array.from(subMainMenuHandler.openers())
+    Array.from(subMainMenuHandler.openers()).map( opener => opener.addEventListener("click", subMainMenuHandler.open) );
+  }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   if (window.matchMedia("(min-width: 992px)").matches) return;
 
-  if (mobileMenuHandler.opener())
-    mobileMenuHandler.opener().addEventListener("click", mobileMenuHandler.open());
+  if (mobileMainMenuHandler.opener())
+    mobileMainMenuHandler.opener().addEventListener("click", mobileMainMenuHandler.open);
 
-  if (mobileMenuHandler.closer())
-    mobileMenuHandler.closer().addEventListener("click", mobileMenuHandler.close());
+  if (mobileMainMenuHandler.closer())
+    mobileMainMenuHandler.closer().addEventListener("click", mobileMainMenuHandler.close);
 });

@@ -36,7 +36,7 @@ class Script
     wp_enqueue_script($this->unique_identifier, $this->src, $this->deps, $this->version, $this->in_footer);
   }
 
-  public function setup_actions()
+  public function setup_hooks()
   {
     return [
       'wp_enqueue_scripts' => ['register_script',10,0],

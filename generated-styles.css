@@ -128,11 +128,13 @@ body .is-layout-constrained.alignfull > :where(:not(.alignleft):not(.alignright)
 }
 
 .menu {
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 @media (min-width: 992px) {
   .menu {
+    overflow-y: hidden;
     flex-direction: row;
   }
 }

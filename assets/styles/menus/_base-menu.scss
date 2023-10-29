@@ -4,11 +4,13 @@
 {
   @extend %reset-list;
 
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
 
   @include step-3
     {
+      overflow-y: hidden;
       flex-direction: row;
     }
 
@@ -25,6 +27,7 @@
 
     @include step-3
     {
+      // display: list-item;
       position: relative;
     }
 
@@ -37,6 +40,7 @@
         @include step-3
         {
           position: absolute;
+          // top: var(--wp--custom--line-height--base);
         }
       }
     }

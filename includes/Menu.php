@@ -20,7 +20,7 @@ class Menu
     register_nav_menu($this->location, $this->desctiption);
   }
 
-  public function setup_actions()
+  public function setup_hooks()
   {
     return [
       'after_setup_theme' => ['register_menu',10,0],

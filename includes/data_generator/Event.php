@@ -15,21 +15,21 @@ class Event
 
   public function get_the_date()
   {
-    return get_post_meta($this->id, 'event_date', true);
+    return carbon_get_post_meta($this->id, 'event_date');
   }
 
   public function get_the_duration()
   {
-    return get_post_meta($this->id, 'event_duration', true);
+    return carbon_get_post_meta($this->id, 'event_duration');
   }
 
   public function get_the_city()
   {
-    return get_post_meta($this->id, 'event_city', true);
+    return carbon_get_post_meta($this->id, 'event_city');
   }
 
   public function get_the_price()
   {
-    return get_post_meta($this->id, 'event_price', true);
+    return carbon_get_post_meta($this->id, 'event_price').(new \NumberFormatter(get_locale(), \NumberFormatter::CURRENCY))->getSymbol(\NumberFormatter::CURRENCY_SYMBOL);
   }
 }

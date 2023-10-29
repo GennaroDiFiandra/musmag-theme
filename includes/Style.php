@@ -36,7 +36,7 @@ class Style
     wp_enqueue_style($this->unique_identifier, $this->src, $this->deps, $this->version, $this->media);
   }
 
-  public function setup_actions()
+  public function setup_hooks()
   {
     return [
       'wp_enqueue_scripts' => ['register_style',10,0],

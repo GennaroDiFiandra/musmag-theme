@@ -6,8 +6,8 @@ defined('WPINC') || die;
 
 class Sidebar
 {
-  const OPEN_WIDGET_MARKUP = '<aside id="%1$s" class="widget %2$s">';
-  const CLOSE_WIDGET_MARKUP = '</aside>';
+  private const OPEN_WIDGET_MARKUP = '<aside id="%1$s" class="widget %2$s">';
+  private const CLOSE_WIDGET_MARKUP = '</aside>';
   private string $name;
   private string $unique_identifier;
   private array $args;
@@ -29,7 +29,7 @@ class Sidebar
     register_sidebar($this->args);
   }
 
-  public function setup_actions()
+  public function setup_hooks()
   {
     return [
       'widgets_init' => ['register_sidebar',10,0],
