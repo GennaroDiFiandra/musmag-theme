@@ -14,9 +14,8 @@
   <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <div id="app">
+    <div id="app" class="container-fluid g-0">
 
-      <header class="sitewide-header">
-        <?php get_template_part('template-parts/logo'); ?>
-        <?php get_template_part('template-parts/menus/main'); ?>
+      <header class="container-fluid g-0">
+        <?php get_template_part('template-parts/sitewide-header'); ?>
       </header>

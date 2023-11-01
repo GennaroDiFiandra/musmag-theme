@@ -5,14 +5,14 @@
   $event = new Event(get_the_ID());
 ?>
 
-<article class="main-content">
+<article class="main-content col-lg-9">
   <?php if (have_posts()) : ?>
     <?php while (have_posts()) : ?>
       <?php the_post(); ?>
 
         <div class="event-header">
           <?php echo get_the_post_thumbnail(); ?>
-          <h1 class="event-title"><?php echo esc_html(get_the_title()); ?></h1>
+          <h1 class="event-title w-75 mx-auto p-3 translateY-n50 text-center text-bg-primary"><?php echo esc_html(get_the_title()); ?></h1>
         </div>
 
         <?php do_action('musmag_theme/single_event/after_title') ?>

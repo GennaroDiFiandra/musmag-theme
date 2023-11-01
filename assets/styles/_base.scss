@@ -1,10 +1,5 @@
 @use './utils' as *;
 
-*, *::before, *::after
-{
-  box-sizing: border-box;
-}
-
 ::-webkit-scrollbar-track
 {
   background-color: var(--wp--preset--color--white);
@@ -19,7 +14,7 @@
   width: calc(var(--wp--preset--font-size--normal) / 2);
 }
 
-img
+:root
 {
-  @extend %make-image-responsive;
+  --bs-body-font-family: "Poppins", sans-serif;
 }

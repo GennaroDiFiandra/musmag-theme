@@ -2,13 +2,17 @@
 
 <?php get_header(); ?>
 
-<main class="sitewide-main">
+<main class="container-xxl g-0">
 
-  <!-- load article -->
-  <?php get_template_part('template-parts/singles/event'); ?>
+  <div class="row">
 
-  <!-- load widgets -->
-  <?php get_sidebar(); ?>
+    <!-- load article -->
+    <?php get_template_part('template-parts/singles/event'); ?>
+
+    <!-- load widgets -->
+    <?php get_sidebar(); ?>
+
+  </div>
 
 </main>
 

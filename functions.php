@@ -66,14 +66,16 @@ final class MusMagTheme
     $this->require_files();
 
     // add compiled css files
-    $this->styles['generated_styles'] = new Style('generated-styles', get_template_directory_uri().'/generated-styles.css');
+    $this->styles['generated_styles'] = new Style('generated-styles', get_template_directory_uri().'/assets/_dist_/generated-styles.css', ['generated-bootstrap-styles']);
+    $this->styles['generated_bootstrap_styles'] = new Style('generated-bootstrap-styles', get_template_directory_uri().'/assets/_dist_/generated-bootstrap.css');
     foreach ($this->styles as $style)
     {
       $this->add_to_hooks_book($style);
     }
 
     // add compiled js files
-    $this->scripts['generated-scripts'] = new Script('generated-scripts', get_template_directory_uri().'/generated-scripts.js');
+    $this->scripts['generated_scripts'] = new Script('generated-scripts', get_template_directory_uri().'/assets/_dist_/generated-scripts.js', ['generated-bootstrap-scripts']);
+    $this->scripts['generated_bootstrap_scripts'] = new Script('generated-bootstrap-scripts', get_template_directory_uri().'/assets/_dist_/generated-bootstrap.js');
     foreach ($this->scripts as $script)
     {
       $this->add_to_hooks_book($script);
