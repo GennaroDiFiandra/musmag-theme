@@ -1,0 +1,20 @@
+%hide_visually:not(:focus):not(:focus-whitin):not(:active)
+{
+  clip-path: inset(50%);
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+%make-image-responsive
+{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+%reset-list
+{
+  padding-left: 0;
+  list-style: none;
+}

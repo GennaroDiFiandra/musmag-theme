@@ -1,0 +1,8 @@
+# ignore os files
+.DS_Store
+
+# ignore npm node_modules
+node_modules/
+
+# ingore useless files
+theme-json-backup.json

@@ -1,0 +1,20 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "translateY": (
+      property: transform,
+      class: translateY,
+      values: (
+        0: translateY(0),
+        25: translateY(25%),
+        50: translateY(50%),
+        75: translateY(75%),
+        100: translateY(100%),
+        n25: translateY(-25%),
+        n50: translateY(-50%),
+        n75: translateY(-75%),
+        n100: translateY(-100%),
+      )
+    )
+  )
+)

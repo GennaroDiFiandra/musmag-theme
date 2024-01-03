@@ -1,0 +1,14 @@
+{
+  "name": "gennarodifiandra/musmag-theme",
+  "authors": [
+      {
+          "name": "Gennaro Di Fiandra",
+          "email": "gennarodifiandra@gmail.com"
+      }
+  ],
+  "autoload": {
+    "psr-4": {
+      "MusMagTheme\\":"includes/"
+    }
+  }
+}
